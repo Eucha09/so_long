@@ -14,6 +14,12 @@ miniLibX는 X-Window와 Cocoa에 대한 지식 없이도 화면에서 무엇인�
   <img src="screenshot/play_classic.png" width="500"/>
 </div>
 
+## Introduction
+
+Pac-Man을 클론코딩하여 간단한 2D 게임을 제작하였다.
+
+플레이어의 목표는 고스트들을 피해 최소한의 움직임으로 모든 먹이를 먹고 출구로 탈출하는 것이다.
+
 ## Getting Started
 
 ### Clone repository
