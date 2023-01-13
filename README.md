@@ -11,7 +11,7 @@ miniLibX는 X-Window와 Cocoa에 대한 지식 없이도 화면에서 무엇인�
 # Pac-Man (so_long)
 
 <div align="center">
-  <img src="screenshot/play_classic.png" width="800"/>
+  <img src="screenshot/play_classic.png" width="600"/>
 </div>
 
 ## Introduction
