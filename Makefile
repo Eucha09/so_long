@@ -1,7 +1,5 @@
 CFLAGS = -Wall -Wextra -Werror
 NAME = so_long
-LIBFT_DIR = Libft
-LIBFT = libft.a
 INCLUDES = includes
 SOURCES =	srcs/main.c\
 			srcs/so_long.c\
@@ -34,25 +32,28 @@ BONUS_CHECK = bonus_check
 all : $(NAME)
 
 $(NAME) : $(OBJECTS)
-	make -C $(LIBFT_DIR)
-	cc $^ $(LIBFT_DIR)/$(LIBFT) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $@ -I $(INCLUDES)
+	make -C mlx
+	make -C Libft
+	cc $^ -LLibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $@ -I $(INCLUDES)
 
 bonus : $(BONUS_CHECK)
 
 $(BONUS_CHECK) : $(OBJECTS_BONUS)
-	make -C $(LIBFT_DIR)
-	cc $^ $(LIBFT_DIR)/$(LIBFT) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME) -I $(INCLUDES)
+	make -C mlx
+	make -C Libft
+	cc $^ -LLibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME) -I $(INCLUDES)
 	touch $@
 
 %.o : %.c
-	cc $(CFLAGS) -Imlx -c $^ -o $@ -I $(INCLUDES)
+	cc $(CFLAGS) -ILibft/includes -Imlx -c $^ -o $@ -I $(INCLUDES)
 
 clean :
-	make clean -C $(LIBFT_DIR)
+	make clean -C Libft
+	make clean -C mlx
 	rm -f $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean : clean
-	make fclean -C $(LIBFT_DIR)
+	make fclean -C Libft
 	rm -f $(NAME) $(BONUS_CHECK)
 
 re : fclean all

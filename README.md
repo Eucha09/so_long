@@ -29,14 +29,6 @@ git clone https://github.com/Eucha09/so_long.git
 cd so_long
 ```
 
-### Install miniLibX
-
-```
-cd mlx
-make
-cd ..
-```
-
 ### Install Pac-Man(so_long)
 
 ```
